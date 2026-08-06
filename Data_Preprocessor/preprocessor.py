@@ -6,9 +6,20 @@ from nltk.corpus import stopwords
 from nltk.stem import WordNetLemmatizer
 from nltk.tokenize import word_tokenize
 
-nltk.download('punkt_tab') # required for word tokenization
-nltk.download('stopwords') # required for stop word list
-nltk.download('wordnet') # required for word lemmatizer
+def _ensure_nltk_resource(resource_paths, package_name):
+    for resource_path in resource_paths:
+        try:
+            nltk.data.find(resource_path)
+            return
+        except LookupError:
+            continue
+
+    nltk.download(package_name, quiet=True)
+
+
+_ensure_nltk_resource(['tokenizers/punkt_tab', 'tokenizers/punkt_tab.zip'], 'punkt_tab')
+_ensure_nltk_resource(['corpora/stopwords', 'corpora/stopwords.zip'], 'stopwords')
+_ensure_nltk_resource(['corpora/wordnet', 'corpora/wordnet.zip'], 'wordnet')
 
 class DataPreprocessor:
     """
