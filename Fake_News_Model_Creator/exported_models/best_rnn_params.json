@@ -1,0 +1,8 @@
+{
+    "embedding_dim": 128,
+    "hidden_dim": 64,
+    "dropout": 0.3,
+    "learning_rate": 0.0005,
+    "num_layers": 1,
+    "batch_size": 32
+}

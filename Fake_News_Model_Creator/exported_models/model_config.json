@@ -1,15 +1,4 @@
 {
-  "vocab_size": 8002,
-  "embedding_dim": 128,
-  "hidden_dim": 128,
-  "rnn_bidirectional": false,
-  "lstm_bidirectional": true,
-  "pad_token": "<PAD>",
-  "unk_token": "<UNK>",
-  "pad_idx": 0,
-  "unk_idx": 1,
-  "label_mapping": {
-    "FAKE": 0,
-    "REAL": 1
-  }
+    "max_len": 200,
+    "vocab_size": 10000
 }
